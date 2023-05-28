@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HotkeyCatcher.js - Demo Page</title>
+</head>
+<body>
+  <h1><U>HotkeyCatcher.js - Demo Page</U></h1>
+  <B>
+  <div id="desc">
+  Try the following hotkeys and sequences : <br><br>
+  <div id="label1">Save data </div> : ctrl s<br>
+  <div id="label1">Save All Data </div> : ctrl a s<br>
+  <div id="label1">Load Data </div> : ctrl shift s<br>
+  <div id="label1">Numpad </div> : numpad1 numpad2 numpad3 numpad+<br>
+  <div id="label1">Sequence </div> : a s d z x c<br>
+  <div id="label1">Mod-Keys Only </div> : ctrl shift ctrl ctrl alt<br>
+  <div id="label1">Get Extra Lives </div> : up up down down left right left right b a enter<br>
+  <br>
+  </div>
+  Change the value of input text below to experiment :<br><br>
+  <input type="text" id="customkey" size="90" value="ctrl shift c v b">
+  <pre id="demo"></pre>
+  </B>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="hotkeycatcher.min.js"></script>
+<script>
+var demo = $("#demo"), customkey = $("#customkey");
+function refresh(key="",code=""){
+  if(hotkeycatcher.keysRev[code]) key = hotkeycatcher.keysRev[code];
+  demo.html(
+    "You Pressed key '"+ key +"' keyCode '"+ code +"'.<br><br>"+
+    "hotkeycatcher.result = "+ JSON.stringify(window.hotkeycatcher.result,null,2) +";"
+  );
+}
+hotkeycatcher.bind("bordertest", ["#desc"], ["#demo"], ( e, hotkey, key ) => {
+  // console.log("Testing Border!");
+});
+hotkeycatcher.bind("namespace", [null], ( e, hotkey, key ) => {
+  if(e.target.tagName == "INPUT") return;
+  e.preventDefault();
+  refresh(e.key,e.keyCode);
+  let sequences = key.hotkey;
+  let checkSeq = str => sequences.includes(str);
+  let checkHk = str => str == hotkey;
+  if( checkSeq("ctrl a s") )
+    alert("Save All Data!");
+  else if( checkHk("ctrl s") )
+    alert("Save Data!");
+  else if( checkSeq("ctrl shift s") )
+    alert("Load Data From Txt!");
+  else if( checkSeq("numpad1 numpad2 numpad3 numpad+") )
+    alert("Sequence with numpad!");
+  else if( checkSeq("a s d z x c") )
+    alert("Sequence Example!");
+  else if( checkSeq("ctrl shift ctrl ctrl alt") )
+    alert("Sequence with only using modkeys!");
+  else if( checkSeq("up up down down left right left right b a enter") )
+    alert("You've Just Got Extra 99 Lives!");
+  if( checkSeq(customkey.val()) )
+    alert("Custom Hotkey / Sequence From Input Text!");
+});
+var divlabellen = 130;
+$('[id=label1]').attr(
+    "style",
+    "display:inline-block;width:"+divlabellen+"px;font-weight:bold;"
+);
+</script>
+</body>
+</html>
