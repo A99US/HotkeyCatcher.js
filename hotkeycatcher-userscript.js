@@ -3,8 +3,8 @@
 // @description Add Custom Hotkeys & Sequences Into websites
 // @namespace   https://github.com/A99US
 // @version     20230625
-// @downloadURL https://cdn.jsdelivr.net/gh/A99US/HotkeyCatcher.js/hotkeycatcher-userscript.js
-// @updateURL   https://cdn.jsdelivr.net/gh/A99US/HotkeyCatcher.js/hotkeycatcher-userscript.js
+// @downloadURL https://cdn.jsdelivr.net/gh/A99US/HotkeyCatcher.js@latest/hotkeycatcher-userscript.js
+// @updateURL   https://cdn.jsdelivr.net/gh/A99US/HotkeyCatcher.js@latest/hotkeycatcher-userscript.js
 // @author      A99US (Agus Setiawan)
 // @copyright   MIT
 // @match       https://twitter.com/*

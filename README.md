@@ -32,7 +32,7 @@ When you include this library to your page, it will automatically add a listener
 GitHub Page
 https://a99us.github.io/HotkeyCatcher.js/hotkeycatcher.min.js
 JSDelivr CDN
-https://cdn.jsdelivr.net/gh/A99US/HotkeyCatcher.js/hotkeycatcher.min.js
+https://cdn.jsdelivr.net/gh/A99US/HotkeyCatcher.js@latest/hotkeycatcher.min.js
 -->
 <script type="text/javascript" src="https://a99us.github.io/HotkeyCatcher.js/hotkeycatcher.min.js"></script>
 ```
@@ -280,7 +280,7 @@ Be aware that it might break your website appearance.
 
 ## Injecting Hotkeys To Websites With Userscript
 
-You can also add custom hotkey to websites with HotkeyCatcher.js using userscript. You can add **[This Script](https://cdn.jsdelivr.net/gh/A99US/HotkeyCatcher.js/hotkeycatcher-userscript.js)** to your userscript extension and add your own hotkeys.
+You can also add custom hotkey to websites with HotkeyCatcher.js using userscript. You can add **[This Script](https://cdn.jsdelivr.net/gh/A99US/HotkeyCatcher.js@latest/hotkeycatcher-userscript.js)** to your userscript extension and add your own hotkeys.
 
 In that userscript, there are shortcuts to change twitter image resolution. Open this **[image from NASA](https://pbs.twimg.com/media/FzOzOdAWcAAQTmZ?format=jpg&name=240x240)** and type **z, x, c, v, b, n or m** to change its resolution.
 
